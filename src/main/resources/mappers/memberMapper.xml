@@ -4,4 +4,30 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="">
+<mapper namespace="com.me.spring.dao.MemberDAO">
+<insert id="insert" parameterType="Member">
+    insert into members (
+    userid,
+    userpwd,
+    username,
+    phone
+    )
+    values
+    (
+    #{userid},
+    #{userpwd},
+    #{username},
+    ${phone}
+    )
+</insert>
+
+<select id="selectId" parameterType="Member" resultType="Member">
+    select * from members
+    where
+    userid = #{userid}
+
+</select>
+
+
+
+</mapper>
